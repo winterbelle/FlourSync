@@ -1,0 +1,48 @@
+# Build results
+bin/
+obj/
+build/
+TestResults/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Rider / VS Code / JetBrains
+.idea/
+.vscode/
+*.sln.docstates
+
+# MAUI-specific junk
+platforms/android/.gradle/
+platforms/android/app/build/
+platforms/android/.cxx/
+platforms/ios/DerivedData/
+*.apk
+*.aab
+
+# .NET packages
+packages/
+*.nupkg
+*.snupkg
+
+# Local config files
+appsettings.Development.json
+.env
+
+# Logs
+*.log
+logs/
+
+# Backup files
+*.bak
+*.tmp
+*.swp
