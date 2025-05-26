@@ -1,0 +1,6 @@
+@FlourSync3.API_HostAddress = http://localhost:5275
+
+GET {{FlourSync3.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync3.API", "FlourSync3.API", "{88F02619-A91D-A3BB-2074-3D0146559099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlourSync3.API", "FlourSync3.API\FlourSync3.API\FlourSync3.API.csproj", "{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync.App", "FlourSync.App", "{A99290FC-1252-79E2-78B3-F76705477633}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync.APP", "FlourSync.APP", "{E7112A02-E7D4-C942-B66A-6E906E737F6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlourSync.App", "FlourSync.App\FlourSync.APP\FlourSync.App.csproj", "{A34DC674-54F7-418E-AA36-1EECFB24A948}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Debug|x64.Build.0 = Debug|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Debug|x86.Build.0 = Debug|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Release|x64.ActiveCfg = Release|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Release|x64.Build.0 = Release|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}.Release|x86.Build.0 = Release|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Debug|x64.Build.0 = Debug|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Debug|x86.Build.0 = Debug|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Release|x64.ActiveCfg = Release|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Release|x64.Build.0 = Release|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Release|x86.ActiveCfg = Release|Any CPU
+		{A34DC674-54F7-418E-AA36-1EECFB24A948}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{675DCA31-FEA6-44C0-8F20-F3DD558A63C2} = {88F02619-A91D-A3BB-2074-3D0146559099}
+		{E7112A02-E7D4-C942-B66A-6E906E737F6A} = {A99290FC-1252-79E2-78B3-F76705477633}
+		{A34DC674-54F7-418E-AA36-1EECFB24A948} = {E7112A02-E7D4-C942-B66A-6E906E737F6A}
+	EndGlobalSection
+EndGlobal
