@@ -16,7 +16,7 @@ mono_crash.*
 .DS_Store
 Thumbs.db
 
-# Rider / VS Code / JetBrains/ VS
+# Rider / VS Code / JetBrains / VS
 .idea/
 .vscode/
 *.sln.docstates
