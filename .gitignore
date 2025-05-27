@@ -16,10 +16,11 @@ mono_crash.*
 .DS_Store
 Thumbs.db
 
-# Rider / VS Code / JetBrains
+# Rider / VS Code / JetBrains/ VS
 .idea/
 .vscode/
 *.sln.docstates
+.vs/
 
 # MAUI-specific junk
 platforms/android/.gradle/
