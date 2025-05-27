@@ -1,4 +1,14 @@
+using FlourSync3.API.Data;
+using Microsoft.EntityFrameworkCore; // Importing EF Core for database context and configuration
+
 var builder = WebApplication.CreateBuilder(args);
+
+//connect to the database using the connection string from appsettings.json
+builder.Services.AddDbContext<FlourSyncContext>(options =>
+    options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    new MySqlServerVersion(new Version(8, 0, 42)) // Specify the MySQL version you are using, e.g., 8.0.42
+    )
+   );
 
 // Add services to the container.
 
