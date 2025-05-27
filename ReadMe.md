@@ -1,23 +1,23 @@
-# ?? FlourSync POS System
+# 🧁 FlourSync POS System
 
 FlourSync is a Point-of-Sale (POS) system built for bakery businesses.  
 Developed using **C#**, **.NET Core**, **MySQL**, and **MAUI**, FlourSync provides desktop/mobile functionality for managing bakery sales, inventory, and employee logins.
 
 ---
 
-## ?? Project Structure
+## 📦 Project Structure
 
 FlourSync/
 
-??? FlourSync.sln             # Main solution
+├── FlourSync.sln             # Main solution
 
-??? FlourSync.API/            # .NET Core Web API (backend)
+├── FlourSync.API/            # .NET Core Web API (backend)
 
-??? FlourSync.App/            # MAUI cross-platform frontend (mobile/tablet)
+├── FlourSync.App/            # MAUI cross-platform frontend (mobile/tablet)
 
 ---
 
-### ? Required Tools
+### ✅ Required Tools
 
 Make sure you have the following installed:
 
@@ -31,7 +31,7 @@ Make sure you have the following installed:
 
 ---
 
-## ?? NuGet Packages (With Correct Versions)
+## 📦 NuGet Packages (With Correct Versions)
 
 Run these inside the `FlourSync.API` folder:
 
@@ -42,12 +42,12 @@ dotnet add package Pomelo.EntityFrameworkCore.MySql --version 8.0.3
 dotnet add package Swashbuckle.AspNetCore --version 6.5.0
 ```
 
-> ?? These versions **must match** to avoid build errors.
-> ? Do **not upgrade** to EF Core 9 or Swashbuckle 6.6+ � it will break Pomelo compatibility.
+> ⚠️ These versions **must match** to avoid build errors.
+> ❌ Do **not upgrade** to EF Core 9 or Swashbuckle 6.6+ — it will break Pomelo compatibility.
 
 ---
 
-## ?? Example `.csproj` Package Section
+## 🧪 Example `.csproj` Package Section
 
 Ensure your `FlourSync.API.csproj` includes:
 
@@ -65,7 +65,7 @@ Ensure your `FlourSync.API.csproj` includes:
 
 ---
 
-## ?? Configuration
+## 🔧 Configuration
 
 ### 1. Create the Database
 
@@ -87,18 +87,18 @@ Open `FlourSync.API/appsettings.json` and update the connection string:
 
 ---
 
-## ??? Building and Running
+## 🏗️ Building and Running
 
 ### In Visual Studio 2022:
 
 1. Open `FlourSync.sln`
-2. Right-click `FlourSync.API` ? **Set as Startup Project**
+2. Right-click `FlourSync.API` → **Set as Startup Project**
 3. Press `Ctrl + Shift + B` to build
 4. Press `F5` to run
 
 ---
 
-## ?? Database Setup
+## 🧱 Database Setup
 
 ### SQL Dump (provided)
 
@@ -108,11 +108,11 @@ mysql -u root -p FlourSyncDB < floursync_dump.sql
 
 ---
 
-## ?? Testing the API
+## 🔍 Testing the API
 
 Once running, test endpoints using:
 
-### ? Swagger UI Testing 
+### ✅ Swagger UI Testing 
 
 Visit:
 
@@ -128,7 +128,7 @@ dotnet run
 
 Once it runs you should be able to see what port it running. To stop running the API simple do `CTRL + C`
 
-## ?? Postman Testing
+## 💻 Postman Testing
 
 Download Postman: https://www.postman.com/downloads/
 
@@ -143,7 +143,7 @@ Try the following endpoints:
 
 ---
 
-## ?? To-Do / In Progress
+## 📋 To-Do / In Progress
 
 * [x] ItemsController
 * [x] MySQL integration
@@ -154,7 +154,7 @@ Try the following endpoints:
 
 ---
 
-## ????? Team Workflow (Important)
+## 🧑‍💻 Team Workflow (Important)
 
 1. **Create a new branch** for any feature:
 
@@ -174,9 +174,9 @@ Try the following endpoints:
 
 ---
 
-## ?? Team
+## 🙌 Team
 
-Built with ? and ?? by the FlourSync Team � Spring 2025
+Built with ☕ and 🍩 by the FlourSync Team – Spring 2025
 
 * Blanca (Full Stack Lead / DB Admin)
 * Karla (Frontend Developer)
@@ -185,11 +185,11 @@ Built with ? and ?? by the FlourSync Team � Spring 2025
 
 ---
 
-## ?? Git Reminders
+## 🛑 Git Reminders
 
-* ? Add your MySQL credentials **locally** only � don�t push real passwords.
-* ? `.vs/`, `bin/`, `obj/`, and user settings are ignored via `.gitignore`
-* ? If Visual Studio locks files in `.vs/`, close it before switching branches.
-* ? Please use environment variables or keep `appsettings.Development.json` locally.
+* ✅ Add your MySQL credentials **locally** only — don’t push real passwords.
+* ✅ `.vs/`, `bin/`, `obj/`, and user settings are ignored via `.gitignore`
+* ✅ If Visual Studio locks files in `.vs/`, close it before switching branches.
+* ✅ Please use environment variables or keep `appsettings.Development.json` locally.
 
 ---
