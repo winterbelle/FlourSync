@@ -20,7 +20,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.sln.docstates
-.vs/
 
 # MAUI-specific junk
 platforms/android/.gradle/
