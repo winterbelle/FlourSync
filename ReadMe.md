@@ -102,6 +102,10 @@ Open `FlourSync.API/appsettings.json` and update the connection string:
 
 ### SQL Dump (provided)
 
+Location: FourSync/Resouces/MySQLDump
+
+***Do this command for each table***
+
 ```bash
 mysql -u root -p FlourSyncDB < floursync_dump.sql
 ```
