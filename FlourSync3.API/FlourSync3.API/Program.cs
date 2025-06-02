@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore; // Importing EF Core for database context a
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 //connect to the database using the connection string from appsettings.json
 builder.Services.AddDbContext<FlourSyncContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -18,6 +19,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<FlourSyncContext>();
+    var env = services.GetRequiredService<IWebHostEnvironment>();
+
+    if (env.IsDevelopment())
+    { //only run this in development environment
+        await SeedData.InitializeAsync(context); // ? this line is everything
+    }
+
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
