@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using System.Text.Json.Serialization;
 
 namespace FlourSync3.API.Models
 {
@@ -11,10 +12,13 @@ namespace FlourSync3.API.Models
 
         [ForeignKey("Products")]
         public int ProductID { get; set; } //Foreign key to the Products table.
-        public Products Products { get; set; } //Navigation property to the Products entity.
-        public string ChangeAmount { get; set; } //Amount of change in stock (e.g., "+5" for addition, "-3" for removal).
-        public DateTime Timestamp { get; set; } = DateTime.Now; //Timestamp of when the inventory change occurred. Defaults to the current date and time.
+
+        [JsonIgnore] // This attribute is used to prevent circular references during serialization.
+        public Products? Products { get; set; } //Navigation property to the Products entity.
+        public int ChangeAmount { get; set; } //Amount of change in stock (e.g., "+5" for addition, "-3" for removal).
+        public DateTime TimeStamp { get; set; } = DateTime.Now; //Timestamp of when the inventory change occurred. Defaults to the current date and time.
         public string Reason { get; set; } //Reason for the inventory change (e.g., "Restock", "Sale", "Adjustment").
 
     }
 }
+
