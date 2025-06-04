@@ -15,6 +15,8 @@ namespace FlourSync3.API.Models
 
         [JsonIgnore] // This attribute is used to prevent circular references during serialization.
         public Products? Products { get; set; } //Navigation property to the Products entity.
+
+        [Range(-1000, 1000)]
         public int ChangeAmount { get; set; } //Amount of change in stock (e.g., "+5" for addition, "-3" for removal).
         public DateTime TimeStamp { get; set; } = DateTime.Now; //Timestamp of when the inventory change occurred. Defaults to the current date and time.
         public string? Reason { get; set; } //Reason for the inventory change (e.g., "Restock", "Sale", "Adjustment").

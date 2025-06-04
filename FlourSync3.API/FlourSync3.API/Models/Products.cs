@@ -12,11 +12,15 @@ namespace FlourSync3.API.Models
         [Key] //This attribute indicates that this property is the primary key of the entity.
         public int ProductID { get; set; } //Primary key for the product entity.
 
-        [Required] //This attribute indicates that this property is required and cannot be null.
+        [Required(ErrorMessage = "Product name is required.")] //This attribute indicates that this property is required and cannot be null.
         [MaxLength(100)] //This attribute specifies the maximum length of the string for this property.
         public string ProductName { get; set; } //Name of the product.
+
+        [Required(ErrorMessage = "Product Category is required."]
         public string ProductCategory { get; set; } //e.g. "bread", "pastry", etc.
+
         [Required]
+        [Range(0.01, 999.99)]
         [Column(TypeName = "decimal(10, 2)")] //This attribute specifies the column type in the database for this property, allowing for two decimal places.
         public decimal ProductPrice { get; set; } //using decimal for currency values to avoid floating-point precision issues.
         public string? ImagePath { get; set; } //Path to the product image for UI.

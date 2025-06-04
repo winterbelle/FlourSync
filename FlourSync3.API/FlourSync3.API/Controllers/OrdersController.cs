@@ -45,6 +45,11 @@ namespace FlourSync3.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Orders>> PostOrder(Orders order)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             // Add the new order
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();

@@ -35,6 +35,12 @@ namespace FlourSync3.API.Controllers
         [HttpPost] // HTTP POST method to create a new inventory log entry
         public async Task<ActionResult<InventoryLog>> PostInventoryLog(InventoryLog inventoryLog) // Asynchronous method to create a new InventoryLog
         {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _context.InventoryLog.Add(inventoryLog); // Adding the new InventoryLog to the context
             await _context.SaveChangesAsync(); // Saving changes to the database asynchronously
             return CreatedAtAction(nameof(GetInventoryLog), new { id = inventoryLog.LogID }, inventoryLog); // Return 201 Created with the location of the new InventoryLog

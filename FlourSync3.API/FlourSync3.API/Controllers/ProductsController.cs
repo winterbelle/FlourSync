@@ -39,6 +39,11 @@ namespace FlourSync3.API.Controllers
         [HttpPost] // HTTP POST method to create a new product
         public async Task<ActionResult<Products>> PostProduct(Products product) // Asynchronous method to create a new Product
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _context.Products.Add(product); // Adding the new product to the context
             await _context.SaveChangesAsync(); // Saving changes to the database asynchronously
             return CreatedAtAction(nameof(GetProduct), new { id = product.ProductID }, product); // Return 201 Created with the location of the new product

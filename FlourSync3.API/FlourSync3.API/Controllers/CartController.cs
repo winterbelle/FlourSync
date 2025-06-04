@@ -44,6 +44,11 @@ namespace FlourSync3.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Cart>> AddCartItem(Cart cartItem)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             // Adding the new cart item to the context
             _context.Cart.Add(cartItem);
             await _context.SaveChangesAsync(); // Saving changes to the database

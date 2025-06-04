@@ -23,6 +23,7 @@ namespace FlourSync3.API.Models
 
         public int Quantity { get; set; } //Quantity of the product in the order item.
 
+        [Range(0.01,999.99)]
         [Column(TypeName = "decimal(10, 2)")]
         public decimal PriceEach { get; set; } //Price of each product in the order item.
 

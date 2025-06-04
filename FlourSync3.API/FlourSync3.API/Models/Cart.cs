@@ -21,7 +21,10 @@ namespace FlourSync3.API.Models
 
         public int Quantity { get; set; }
 
+        [Range(0.01, 999.99)]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal PriceAtTime { get; set; }
+
         public DateTime AddedAt { get; set; } = DateTime.Now;
 
     }

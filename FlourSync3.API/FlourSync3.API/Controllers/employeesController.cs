@@ -40,6 +40,12 @@ namespace FlourSync3.API.Controllers
         [HttpPost] // HTTP POST method to create a new Employee
         public async Task<ActionResult<Employees>> PostEmployees(Employees employee) // Asynchronous method to create a new Employee
         {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _context.Employees.Add(employee); // Adding the new Employee to the context
             await _context.SaveChangesAsync(); // Saving changes to the database asynchronously
             return CreatedAtAction(nameof(GetEmployees), new { id = employee.EmployeeID }, employee); // Return 201 Created with the location of the new Employee
