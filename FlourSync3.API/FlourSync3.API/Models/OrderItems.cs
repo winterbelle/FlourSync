@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FlourSync3.API.Models
 {
@@ -10,10 +11,14 @@ namespace FlourSync3.API.Models
 
         [ForeignKey("Orders")]
         public int OrderID { get; set; } //Foreign key to the Orders table.
+
+        [JsonIgnore]
         public Orders? Orders { get; set; } //Navigation property to the Orders entity.
 
         [ForeignKey("Products")]
         public int ProductID { get; set; } //Foreign key to the Products table.
+
+        [JsonIgnore]
         public Products? Products { get; set; } //Navigation property to the Products entity.
 
         public int Quantity { get; set; } //Quantity of the product in the order item.
