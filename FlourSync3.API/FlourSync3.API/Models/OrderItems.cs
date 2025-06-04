@@ -10,11 +10,11 @@ namespace FlourSync3.API.Models
 
         [ForeignKey("Orders")]
         public int OrderID { get; set; } //Foreign key to the Orders table.
-        public Orders Orders { get; set; } //Navigation property to the Orders entity.
+        public Orders? Orders { get; set; } //Navigation property to the Orders entity.
 
         [ForeignKey("Products")]
         public int ProductID { get; set; } //Foreign key to the Products table.
-        public Products Products { get; set; } //Navigation property to the Products entity.
+        public Products? Products { get; set; } //Navigation property to the Products entity.
 
         public int Quantity { get; set; } //Quantity of the product in the order item.
 

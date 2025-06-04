@@ -17,7 +17,7 @@ namespace FlourSync3.API.Models
         public Products? Products { get; set; } //Navigation property to the Products entity.
         public int ChangeAmount { get; set; } //Amount of change in stock (e.g., "+5" for addition, "-3" for removal).
         public DateTime TimeStamp { get; set; } = DateTime.Now; //Timestamp of when the inventory change occurred. Defaults to the current date and time.
-        public string Reason { get; set; } //Reason for the inventory change (e.g., "Restock", "Sale", "Adjustment").
+        public string? Reason { get; set; } //Reason for the inventory change (e.g., "Restock", "Sale", "Adjustment").
 
     }
 }
