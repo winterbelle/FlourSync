@@ -39,6 +39,7 @@ namespace FlourSync3.API.Controllers
             await _context.SaveChangesAsync(); // Saving changes to the database asynchronously
             return CreatedAtAction(nameof(GetInventoryLog), new { id = inventoryLog.LogID }, inventoryLog); // Return 201 Created with the location of the new InventoryLog
         }
+
         // PUT: api/inventorylog/{id}
         [HttpPut("{id}")] // HTTP PUT method to update an existing inventory log entry
         public async Task<IActionResult> PutInventoryLog(int id, [FromBody] InventoryLog inventoryLog) // Asynchronous method to update an InventoryLog
