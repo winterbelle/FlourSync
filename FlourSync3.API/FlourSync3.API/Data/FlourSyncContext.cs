@@ -12,6 +12,7 @@ namespace FlourSync3.API.Data
         public DbSet<Products> Products { get; set; } //maps to to the Products table in the database.
         public DbSet<Orders> Orders { get; set; } //maps to the Orders table in the database.
         public DbSet<OrderItems> OrderItems { get; set; } //maps to the OrderItems table in the database.
+        public DbSet<Cart> Cart { get; set; } //maps to Cart table in the DB.
         public DbSet<Employees> Employees { get; set; } //maps to the Employees table in the database.
         public DbSet<InventoryLog> InventoryLog { get; set; } //maps to the InventoryLogs table in the database.
     }
