@@ -19,9 +19,9 @@ namespace FlourSync3.API.Models
         [Column(TypeName = "decimal(10, 2)")] //This attribute specifies the column type in the database for this property.
         public decimal TotalPrice { get; set; } //Total amount for the order.
 
-        public string PaymentType { get; set; } //Payment method used for the order (e.g., "Credit Card", "Cash", etc.).
+        public string? PaymentType { get; set; } //Payment method used for the order (e.g., "Credit Card", "Cash", etc.).
 
-        public ICollection<OrderItems> OrderItems { get; set; } //Navigation property for related OrderItems. This allows us to access all order items associated with this order.
+        public ICollection<OrderItems> OrderItems { get; set; } = new List<OrderItems>(); //Navigation property for related OrderItems. This allows us to access all order items associated with this order.
 
 
     }
