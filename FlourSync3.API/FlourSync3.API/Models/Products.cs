@@ -16,7 +16,7 @@ namespace FlourSync3.API.Models
         [MaxLength(100)] //This attribute specifies the maximum length of the string for this property.
         public string ProductName { get; set; } //Name of the product.
 
-        [Required(ErrorMessage = "Product Category is required."]
+        [Required(ErrorMessage = "Product Category is required.")]
         public string ProductCategory { get; set; } //e.g. "bread", "pastry", etc.
 
         [Required]

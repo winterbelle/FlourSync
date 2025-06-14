@@ -8,11 +8,11 @@ namespace FlourSync3.API.Controllers
 {
     [ApiController] // Indicates that this class is an API controller
     [Route("api/[controller]")] // Sets the route for the controller
-    public class employeesController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
         private readonly FlourSyncContext _context; // Database context for accessing the database
 
-        public employeesController(FlourSyncContext context) // Constructor that takes the database context as a parameter
+        public EmployeesController(FlourSyncContext context) // Constructor that takes the database context as a parameter
         {
             _context = context; // Assigning the context to the private field
         }

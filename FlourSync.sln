@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync3.API", "FlourSync
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlourSync3.API", "FlourSync3.API\FlourSync3.API\FlourSync3.API.csproj", "{675DCA31-FEA6-44C0-8F20-F3DD558A63C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync.App", "FlourSync.App", "{A99290FC-1252-79E2-78B3-F76705477633}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync.APP", "FlourSync.APP", "{A99290FC-1252-79E2-78B3-F76705477633}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlourSync.APP", "FlourSync.APP", "{E7112A02-E7D4-C942-B66A-6E906E737F6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlourSync.App", "FlourSync.App\FlourSync.APP\FlourSync.App.csproj", "{A34DC674-54F7-418E-AA36-1EECFB24A948}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlourSync.APP", "FlourSync.APP\FlourSync.APP\FlourSync.APP.csproj", "{A34DC674-54F7-418E-AA36-1EECFB24A948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
