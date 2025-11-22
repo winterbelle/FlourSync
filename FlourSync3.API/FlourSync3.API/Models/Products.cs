@@ -14,9 +14,9 @@ namespace FlourSync3.API.Models
 
         [Required(ErrorMessage = "Product name is required.")] //This attribute indicates that this property is required and cannot be null.
         [MaxLength(100)] //This attribute specifies the maximum length of the string for this property.
-        public string ProductName { get; set; } //Name of the product.
+        public string? ProductName { get; set; } //Name of the product.
 
-        [Required(ErrorMessage = "Product Category is required."]
+        [Required(ErrorMessage = "Product Category is required.")]
         public string ProductCategory { get; set; } //e.g. "bread", "pastry", etc.
 
         [Required]
@@ -27,7 +27,7 @@ namespace FlourSync3.API.Models
         public int StockQty { get; set; } //Current stock quantity in inventory.
 
         //one product can appear in many order items.
-        public ICollection<OrderItems> OrderItems { get; set; } //Navigation property for related OrderItems. This allows us to access all order items associated with this product.
+        public ICollection<OrderItems>? OrderItems { get; set; } //Navigation property for related OrderItems. This allows us to access all order items associated with this product.
 
     }
 }

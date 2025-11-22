@@ -16,11 +16,20 @@ namespace FlourSync3.API.Controllers
             _context = context; // Assigning the context to the private field
         }
 
-        // GET: api/products
+        // GET: api/products and api/products?ProductsCategory={ProductCategory}
+        //can return all products or filtered by category entered. 
         [HttpGet] // HTTP GET method to retrieve all products
-        public async Task<ActionResult<IEnumerable<Products>>> GetProducts() // Asynchronous method returning a list of Products
+        public async Task<ActionResult<IEnumerable<Products>>> GetProducts([FromQuery] string? category)
         {
-            return await _context.Products.ToListAsync(); // Fetching all products from the database asynchronously
+            var query = _context.Products.AsQueryable();
+
+            if (!string.IsNullOrEmpty(category))
+            {
+                query = query.Where(p => p.ProductCategory.ToLower() == category.ToLower());
+            }
+
+            var products = await query.ToListAsync();
+            return Ok(products);
         }
 
         // GET: api/products/{id}

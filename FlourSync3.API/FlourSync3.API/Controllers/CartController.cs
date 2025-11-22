@@ -20,11 +20,23 @@ namespace FlourSync3.API.Controllers
 
         //Get: api/cart -> Retrieves all items added to the cart
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cart>>> GetCartItems()
+        public async Task<ActionResult<IEnumerable<object>>> GetCartItems()
         {
-            // Fetching all cart items from the database
-            var cartItems = await _context.Cart.ToListAsync();
-            return Ok(cartItems); // Returning the list of cart items with a 200 OK status
+            var cartItems = await _context.Cart
+                .Include(c => c.Product) // Ensure you include navigation property
+                .Select(c => new
+                {
+                    c.CartId,
+                    c.ProductID,
+                    c.EmployeeID,
+                    c.Quantity,
+                    c.PriceAtTime,
+                    c.AddedAt,
+                    ProductName = c.Product != null ? c.Product.ProductName : "Unknown" // 👈 Safely handle null reference
+                })
+                .ToListAsync();
+
+            return Ok(cartItems);
         }
 
         //Get: api/cart/{id} -> Retrieves a specific cart item by ID

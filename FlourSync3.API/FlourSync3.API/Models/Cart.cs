@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace FlourSync3.API.Models
 {
@@ -17,7 +18,7 @@ namespace FlourSync3.API.Models
         [ForeignKey("Products")]
         public int ProductID { get; set; }
 
-        public Products? Products { get; set; }
+        public Products? Product { get; set; }
 
         public int Quantity { get; set; }
 

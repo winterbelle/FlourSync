@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlourSync.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+173678faf151e21bbe751412961ff5b7e501bc3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+2f729bc878be92b1240b2a316177a38ef5c4fbc8")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlourSync.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlourSync.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

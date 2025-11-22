@@ -57,9 +57,67 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+	  <None Remove="Resources\Flour sync images\3 inch cake.png" />
+	  <None Remove="Resources\Flour sync images\4 inch cake.jpg" />
+	  <None Remove="Resources\Flour sync images\7 inch cake.webp" />
+	  <None Remove="Resources\Flour sync images\8 inch cake .jpg" />
+	  <None Remove="Resources\Flour sync images\baguettes.jpg" />
+	  <None Remove="Resources\Flour sync images\Baguettes.webp" />
+	  <None Remove="Resources\Flour sync images\beverage.jpeg" />
+	  <None Remove="Resources\Flour sync images\Big cookie.png" />
+	  <None Remove="Resources\Flour sync images\bigcookie.png" />
+	  <None Remove="Resources\Flour sync images\cake3inch.png" />
+	  <None Remove="Resources\Flour sync images\cake4inch.jpg" />
+	  <None Remove="Resources\Flour sync images\cake7inch.jpg" />
+	  <None Remove="Resources\Flour sync images\cake7inch.webp" />
+	  <None Remove="Resources\Flour sync images\cake8inch.jpg" />
+	  <None Remove="Resources\Flour sync images\Challah Bread.jpg" />
+	  <None Remove="Resources\Flour sync images\challahBread.jpg" />
+	  <None Remove="Resources\Flour sync images\Cookies by the pound.webp" />
+	  <None Remove="Resources\Flour sync images\cookiesbythepound.jpg" />
+	  <None Remove="Resources\Flour sync images\cookiesbythepound.webp" />
+	  <None Remove="Resources\Flour sync images\Croissant.jpg" />
+	  <None Remove="Resources\Flour sync images\Cupcakes.jpg" />
+	  <None Remove="Resources\Flour sync images\Mini Cupcakes.jpg" />
+	  <None Remove="Resources\Flour sync images\Mini Pastries.jpg" />
+	  <None Remove="Resources\Flour sync images\miniCupcakes.jpg" />
+	  <None Remove="Resources\Flour sync images\miniPastries.jpg" />
+	  <None Remove="Resources\Flour sync images\Muffins.jpeg" />
+	  <None Remove="Resources\Flour sync images\Pasteries.jpg" />
+	  <None Remove="Resources\Flour sync images\Semolina Roll.jpg" />
+	  <None Remove="Resources\Flour sync images\semolinaRoll.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Flour sync images\baguettes.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\beverage.jpeg" />
+	  <MauiImage Include="Resources\Flour sync images\bigcookie.png" />
+	  <MauiImage Include="Resources\Flour sync images\cake3inch.png" />
+	  <MauiImage Include="Resources\Flour sync images\cake4inch.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\cake7inch.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\cake8inch.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\challahbread.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\cookiesbythepound.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\croissant.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\cupcakes.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\minicupcakes.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\minipastries.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\muffins.jpeg" />
+	  <MauiImage Include="Resources\Flour sync images\pasteries.jpg" />
+	  <MauiImage Include="Resources\Flour sync images\semolinaroll.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="DummyPageCategories.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MenuPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

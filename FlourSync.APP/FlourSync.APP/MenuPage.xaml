@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlourSync.APP.MenuPage"
+             x:Name="Menu"
+             Title="MenuPage">
+
+    <Grid RowDefinitions="Auto, *"
+          ColumnDefinitions="*,300" BackgroundColor="White">
+        <!--Header-->
+        <Grid Grid.Row="0" ColumnSpan="2"
+              Padding="10"
+              BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <!--Back Button-->
+                <ColumnDefinition Width="*" />
+                <!--Spacer (pushes name to the right)-->
+                <ColumnDefinition Width="Auto" />
+                <!--Profile Section-->
+            </Grid.ColumnDefinitions>
+            <!--Back Button-->
+            <ImageButton Source="back_arrow.png"
+                        
+                         HeightRequest="30"
+                         WidthRequest="30" />
+            <!--Profile section-->
+            <Frame Grid.Column="2"
+                   WidthRequest="40"
+                   HeightRequest="40"
+                   CornerRadius="20"
+                   BackgroundColor="#E0E0E0"
+                   VerticalOptions="End"
+                   Padding="0"
+                   HasShadow="False">
+                <Label x:Name="InitialsLabel"
+                       Text="BA"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </Frame>
+        </Grid>
+
+        <!--Product Display Section-->
+        <Grid Grid.Row="1" Grid.Column="0"
+              BackgroundColor="White"
+              Padding="10"
+              ColumnSpacing="0"
+              RowSpacing="0">
+            <CollectionView x:Name="ProductCollectionView"
+                                Grid.Row="1"
+                                ItemsSource="{Binding Products}"
+                                SelectionMode="None">
+                <!--Defining a 4-column grid for the product cards-->
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                         Span="4" 
+                                         HorizontalItemSpacing="16"
+                                         VerticalItemSpacing="16"/>
+                </CollectionView.ItemsLayout>
+                <!--Product card template-->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="black"
+                                   BackgroundColor="White" 
+                                   CornerRadius="10"
+                                   HasShadow="True"
+                                   Padding="10" 
+                                   Margin="4"
+                                   WidthRequest="200"
+                                   HeightRequest="160">
+
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Tapped="OnProductTapped" />
+                            </Frame.GestureRecognizers>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="80"/>
+                                </Grid.RowDefinitions>
+                                <!--Image Background-->
+                                <Image Source="{Binding ImagePath}"
+                                        Aspect="Fill"
+                                        Opacity="1"
+                                        ZIndex="0" 
+                                       Grid.Row="0"/>
+                                <StackLayout Grid.Row="1">
+                                    <!--Product Name-->
+                                    <Label Text="{Binding ProductName}"
+                                           FontSize="16"
+                                           HorizontalOptions="Center"
+                                           TextColor="Black"
+                                           FontAttributes="Bold"
+                                           />
+                                    <!--Product Price-->
+                                    <Label Text="{Binding ProductPrice, StringFormat='${0:F2}'}"
+                                           HorizontalOptions="Center" TextColor="Black"
+                                           FontAttributes="Bold"/>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <!--Cart Section-->
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1"
+                             Padding="16"
+                             WidthRequest="300"
+                             Background="#f4f4f4"
+                             Spacing="12"
+                             VerticalOptions="Fill">
+            <!--Cart Title-->
+            <Label Text="🛒 Cart 🛒"
+                   FontSize="20"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <!--Cart items-->
+            <CollectionView x:Name="CartCollectionView"
+                            ItemsSource="{Binding CartItems}"
+                            HeightRequest="400"
+                            VerticalOptions="Fill">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="FontSize" Value="12" />
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                    <Setter Property="TextColor" Value="Red" />
+                                </Style>
+                            </Grid.Resources>
+                            
+                            <!--Andrioid: Swipe to delete-->
+                            <SwipeView IsVisible="{Binding Source={x:Reference Menu}, Path=ShowSwipe}">
+
+
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Delete"
+                                                   BackgroundColor="Red"
+                                                   Command="{Binding Source={x:Reference Name=CartPage}, Path=BindingContext.DeleteCommand}"
+                                                   CommandParameter="{Binding CartId}"/>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Grid Padding="5">
+                                    <Label Text="{Binding Product.ProductName}" />
+                                    <Label Text="{Binding Quantity}" />
+                                </Grid>
+                            </SwipeView>
+                            
+                            <!--Windows/MacOS: Tiny Delete Button-->
+                            <Grid IsVisible="{Binding Source={x:Reference Menu}, Path=ShowDeleteButton}" ColumnDefinitions="*,Auto">
+                                <StackLayout>
+                                    <Label Text="{Binding Product.ProductName}" />
+                                    <Label Text="{Binding Quantity}" />
+                                </StackLayout>
+                                <Button Text="❌"
+                                        VerticalOptions="Center"
+                                        Command="{Binding Source={x:Reference Menu}, Path=BindingContext.DeleteCommand}" />
+                            
+                            </Grid>
+                        <Frame BackgroundColor="#f4f4f4" Padding="10" Margin="5">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding ProductName}" TextColor="Black" FontAttributes="Bold"/>
+                                <Label Text="{Binding Quantity, StringFormat='Quantity: {0}'}" 
+                                       TextColor="Black"/>
+                                <Label Text="{Binding PriceAtTime, StringFormat='Price: ${0:F2}'}" 
+                                       TextColor="Black"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--Total Price Label-->
+            <Label x:Name="TotalLabel"
+                   Text="{Binding CartTotal, StringFormat='Total: ${0:F2}'}"
+                   TextColor="Black"
+                   FontSize="18"
+                   Margin="0,10"
+                   HorizontalOptions="Center"/>
+            <!--Checkout button-->
+            <Button Text="Checkout"
+                    TextColor="White"
+                    Background="Green"
+                    IsEnabled="False"
+                    x:Name="CheckoutButton"
+                    VerticalOptions="Fill"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
+    
